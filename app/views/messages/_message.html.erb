@@ -1,0 +1,4 @@
+<div class="message <%= user_is_messages_author ? "right" : "" %>">
+  <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{message.user.email.split("@")[0]}", class: "avatar" %>
+  <div class="message-content"><%= message.content %></div>
+</div>
