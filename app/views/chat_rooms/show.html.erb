@@ -18,7 +18,7 @@
 </div>
 <% content_for :after_js do %>
   <script>
-
+    scrollLastMessageIntoView();
     App['chat_room_<%= @chat_room.id %>'] = App.cable.subscriptions.create(
       {
       channel: 'ChatRoomsChannel',
@@ -29,6 +29,7 @@
           if (data.current_user_id !== <%= current_user.id %>) {
           var messagesContainer = document.querySelector('.messages');
           messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+          scrollLastMessageIntoView();
         }
         }
       }
