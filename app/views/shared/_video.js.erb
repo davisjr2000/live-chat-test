@@ -1,0 +1,44 @@
+var apiKey = <%= ENV['API_KEY'] %>;
+var sessionId = '<%= @chat_room.session_token %>';
+var token = '<%= @chat_room.generated_token %>';
+console.log(sessionId)
+
+const handleError = (errors) => {
+  console.log('something happened')
+}
+
+const initializeSession = () => {
+
+  var session = OT.initSession(apiKey, sessionId);
+
+   // Create a publisher
+  var publisher = OT.initPublisher('publisher', {
+    insertMode: 'append',
+    width: '80%',
+    height: '600px'
+  }, handleError);
+
+  // Connect to the session
+  session.connect(token, function(error) {
+    // If the connection is successful, publish to the session
+    if (error) {
+      handleError(error);
+    } else {
+      session.publish(publisher, handleError);
+    }
+  });
+
+  // create subscriber
+  session.on('streamCreated', function(event) {
+    session.subscribe(event.stream, 'subscriber', {
+      insertMode: 'append',
+      width: '80%',
+      height: '500px'
+    }, handleError);
+  });
+
+}
+
+initializeSession();
+
+console.log('im working')

@@ -39,31 +39,15 @@
 <% end %>
 
 
-<!-- OpenTok.js library -->
-<script src="https://static.opentok.com/v2/js/opentok.js"></script>
-<script>
-
-// credentials
-var apiKey = '45828062';
-var sessionId = '1_MX40NTgyODA2Mn5-MTU0MjE5MDMyNzc3Nn53SmEwMUNITU9TVlQyN3ltTUpjRzZ5U0l-UH4';
-var token = 'T1==cGFydG5lcl9pZD00NTgyODA2MiZzaWc9NWJiYzYwYWY1ZGFjYzNlYWEwZWQ2Nzg2YzM0ZDQ4M2IwZWIwNzQ2YzpzZXNzaW9uX2lkPTFfTVg0ME5UZ3lPREEyTW41LU1UVTBNakU1TURNeU56YzNObjUzU21Fd01VTklUVTlUVmxReU4zbHRUVXBqUnpaNVUwbC1VSDQmY3JlYXRlX3RpbWU9MTU0MjE5MDMzOCZub25jZT0wLjAwNDcxMDgxODc5MTI0OTIzOCZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNTQyMjc2NzM4';
-
-// connect to session
-var session = OT.initSession(apiKey, sessionId);
-
-// create publisher
-var publisher = OT.initPublisher();
-session.connect(token, function(err) {
-   // publish publisher
-   session.publish(publisher);
-});
-
-// create subscriber
-session.on('streamCreated', function(event) {
-   session.subscribe(event.stream);
-});
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    <%= render(:partial => 'shared/video', :handlers => [:erb], :formats => [:js]) %>
+  <% end %>
+<% end %>
 
 
-</script>
-<%= current_user.email %>
+    <div id="videos">
+        <div id="subscriber"></div>
+        <div id="publisher"></div>
+    </div>
 <h1>a mt bom dia </h1>
