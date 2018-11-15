@@ -6,5 +6,7 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://https://sensei-video-test.herokuapp.com" } %>
+  url: <%= ENV['REDISCLOUD_URL'] %>
   channel_prefix: live-chat-test_production
+
+ # <%= ENV.fetch("REDIS_URL") { "redis://https://sensei-video-test.herokuapp.com" } %>
