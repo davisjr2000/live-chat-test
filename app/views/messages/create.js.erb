@@ -1,4 +1,3 @@
-
 <% if @message.errors.any? %>
   // handle validation errors later
 
@@ -8,5 +7,4 @@
   var input = document.querySelector('#message_content');
   input.value = '';
   input.blur();
-  scrollLastMessageIntoView();
 <% end %>
