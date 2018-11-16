@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
+    @sensei = Sensei.where(user_id: @user.id)
   end
 end

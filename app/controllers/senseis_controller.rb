@@ -16,16 +16,17 @@ class SenseisController < ApplicationController
   end
 
   def index
+    @user = current_user
+    @sensei = Sensei.where(user_id: @user.id)
     if params[:query].present?
       @senseis = Sensei.search_by_username(params[:query])
     else
       @senseis = Sensei.all
     end
-    @user = current_user
   end
 
   def show
     @user = current_user
-    @sensei = Sensei.find(params[:id])
+    @sensei = Sensei.where(user_id: @user.id).first
   end
 end
