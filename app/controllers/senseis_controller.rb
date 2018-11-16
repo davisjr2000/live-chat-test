@@ -6,9 +6,10 @@ class SenseisController < ApplicationController
 
   def create
     @user = current_user
-    @sensei = Sensei.new(user_id: params[:user_id])
+    @sensei = Sensei.new
+    @sensei.user = current_user
     if @sensei.save
-      redirect_to user_sensei_path(params[:user_id], @sensei )
+      redirect_to @sensei
     else
       render :new
     end
@@ -17,6 +18,7 @@ class SenseisController < ApplicationController
 
   def index
     @senseis = Sensei.all
+    @user = current_user
   end
 
   def show
