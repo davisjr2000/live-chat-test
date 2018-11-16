@@ -1,6 +1,6 @@
 <h1>Sensei <%= @sensei.user.email %></h1>
 
-
 <% if @sensei.user == current_user %>
-  <%= link_to 'Defina sua disponibilidade para aulas', new_sensei_agenda_path(@sensei), class: 'btn btn-primary' %>
-  <% end %>
+  <%= link_to 'Defina sua disponibilidade para aulas', sensei_agendas_path(@sensei), class: 'btn btn-primary' %>
+<% end %>
+
