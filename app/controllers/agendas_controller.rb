@@ -52,14 +52,14 @@ class AgendasController < ApplicationController
 
   def new
     @user = current_user
-    @sensei = Sensei.find(params[:sensei_id])
+    @sensei = @user.sensei
     @agenda = Agenda.new
     @select_options = SELECT_OPTIONS
   end
 
   def create
     @user = current_user
-    @sensei = Sensei.find(params[:sensei_id])
+    @sensei = @user.sensei
     @select_options = SELECT_OPTIONS
     @agenda = Agenda.new
     @agenda.sensei = @sensei
@@ -80,7 +80,7 @@ class AgendasController < ApplicationController
 
   def index
     @user = current_user
-    @sensei = Sensei.where(user_id: @user.id).first
+    @sensei = @user.sensei
     @agenda = Agenda.new
     @agendas = Agenda.where(sensei_id: @sensei.id).order(date: :asc)
     @select_options = SELECT_OPTIONS
