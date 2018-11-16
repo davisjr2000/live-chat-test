@@ -1,2 +1,7 @@
 <h1>Sensei#index</h1>
 <p>Find me in app/views/sensei/index.html.erb</p>
+<% @senseis.each do |sensei| %>
+  <%= link_to sensei_path(sensei) do %>
+    <h3> Sensei <%= sensei.user.email %> </h3>
+  <% end %>
+<% end %>

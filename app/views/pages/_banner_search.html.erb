@@ -1,9 +1,10 @@
 <div class="banner-search">
   <p><span style="color: #ffffff;">Search a content: </span></p>
-  <div class="input-group">
-    <input type="text" class="form-control" placeholder="Search for...">
-    <span class="input-group-btn">
-      <button class="btn btn-default" type="button">Go!</button>
-    </span>
-  </div>
+  <%= form_tag senseis_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a Sensei"
+      %>
+    <% end %>
 </div>
