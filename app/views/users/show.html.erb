@@ -1,8 +1,16 @@
 <div class="container">
   <div class="text-center">
+
+    <h1> </h1>
     <h1>User: <%= @user.email %></h1>
     <h2><%= @user.full_name %></h2>
   </div>
+  <% if @user.sensei %>
+    <%= link_to @user.sensei do %>
+    <h2>SENSEI PAGE </h2>
+    <% end %>
+    <% end %>
+  <% else %>
   <div class="wrapp">
     <div class="division1 text-left">
 
@@ -14,6 +22,6 @@
       <% end %>
 
     </div>
-
   </div>
+
 </div>
