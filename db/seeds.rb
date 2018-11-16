@@ -10,3 +10,12 @@
   room.name = "HerokuTest"
   room.save
 end
+
+
+subjects = ["Math","English","Portuguese","Spanish","Biology","Chemistry","Physics","Geography","History"]
+
+subjects.each do |subject|
+  sub = Subject.new
+  sub.title = subject
+  sub.save
+end
