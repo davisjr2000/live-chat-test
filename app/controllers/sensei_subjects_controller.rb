@@ -1,11 +1,8 @@
-class LessonRequestController < ApplicationController
+class SenseiSubjectsController < ApplicationController
   def new
   end
 
   def create
-  end
-
-  def show
   end
 
   def index
