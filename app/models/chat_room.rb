@@ -1,7 +1,7 @@
-require 'opentok'
-
 class ChatRoom < ApplicationRecord
   has_many :messages, dependent: :destroy
+  belongs_to :lesson_request
+
   before_create :set_session_token
 
   private
