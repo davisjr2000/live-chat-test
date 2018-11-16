@@ -1,7 +1,6 @@
-<h1>Sensei#show</h1>
-<p>Find me in app/views/sensei/show.html.erb</p>
+<h1>Sensei <%= @sensei.user.email %></h1>
 
-<h1>Senseis #<%= @sensei.id %></h1>
-<p>Find me in app/views/senseis/show.html.erb</p>
 
-<%= link_to 'Defina sua disponibilidade para aulas', new_sensei_agenda_path(@sensei), class: 'btn btn-primary' %>
+<% if @sensei.user == current_user %>
+  <%= link_to 'Defina sua disponibilidade para aulas', new_sensei_agenda_path(@sensei), class: 'btn btn-primary' %>
+  <% end %>
