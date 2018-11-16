@@ -20,10 +20,8 @@
       <div class="dropdown">
         <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <% unless @sensei.nil? %>
-            <% unless @sensei.id.nil? %>
-              <li> <%= link_to "Sensei Profile", sensei_path(@sensei), class: "navbar-wagon-item navbar-wagon-link" %> </li>
-            <% end %>
+          <% if @user.sensei.present? %>
+          <li> <%= link_to "Sensei Profile", sensei_path(@sensei), class: "navbar-wagon-item navbar-wagon-link" %> </li>
           <% end %>
           <li>
             <%= link_to user_path(@user) do %>
