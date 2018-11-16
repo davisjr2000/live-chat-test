@@ -1,0 +1,10 @@
+<div class="banner-search">
+  <p><span style="color: #ffffff;">Search a content: </span></p>
+  <%= form_tag senseis_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a Sensei"
+      %>
+    <% end %>
+</div>

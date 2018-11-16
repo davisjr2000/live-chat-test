@@ -1,3 +1,22 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<h1><%= @user.email %></h1>
+<div class="container">
+  <div class="text-center">
+
+    <h1> </h1>
+    <h1>User: <%= @user.email %></h1>
+    <h2><%= @user.full_name %></h2>
+  </div>
+  <div class="wrapp">
+    <div class="division1 text-left">
+
+      <%= link_to new_sensei_path(@user) do %>
+      <%= image_tag "class.png", class: 'card' %>
+      <h2>
+        Seja um Sensei
+      </h2>
+      <% end %>
+
+    </div>
+
+  </div>
+  <%  %>
+</div>
