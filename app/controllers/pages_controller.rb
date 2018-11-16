@@ -3,6 +3,10 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
-    @sensei = Sensei.where(user_id: @user.id)
+    unless @user.nil?
+      @sensei = Sensei.where(user_id: @user.id).first
+    else
+      @sensei = nil
+    end
   end
 end
