@@ -13,11 +13,14 @@ class SenseisController < ApplicationController
     else
       render :new
     end
-
   end
 
   def index
-    @senseis = Sensei.all
+    if params[:query].present?
+      @senseis = Sensei.search_by_username(params[:query])
+    else
+      @senseis = Sensei.all
+    end
     @user = current_user
   end
 
