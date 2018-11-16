@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :messages, dependent: :destroy
+  has_many :lesson_requests
+  has_one :sensei
 end
