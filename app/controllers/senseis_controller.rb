@@ -1,6 +1,6 @@
 class SenseisController < ApplicationController
   def new
-    @user = current_user_id
+    @user = current_user
     @sensei = Sensei.new
   end
 
