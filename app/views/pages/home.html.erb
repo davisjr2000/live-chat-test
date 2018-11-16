@@ -1,3 +1,71 @@
-<!-- OpenTok.js library -->
+<div class="banner">
+  <div class="banner-content">
+  <div class="bg-video">
+    <div class="video-container">
+    <video class="pexels" src ='assets/pexels.webm' controls muted loop playinline autoplay style; background none; overflow: hidden;">
+    </video>
+    <a href="#" class="btn btn-default start-now">Start now</a>
+    </div>
+    </div>
+    <h1>Sensei</h1>
+    <p>The best way to have classes, learn and teach what you want,  whatever you want </p>
+    <%#= form_tag offers_path, method: :get do %>
+       <%#= select_tag "currency", options_from_collection_for_select(@currencies, "id", "name"), class: "form-control select optional", :onchange => "this.form.submit();" %>
+       <%#= text_field_tag :currency_query, params[:currency_query], class: "form-control",
+       placeholder: "Classes" %>
+    <%# end %>
+  </div>
+</div>
 
-<h1>SENSEI</h1>
+<div class="container text-center padded features">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag "sensei.png", class: 'card' %>
+      <h2>Be an Sensei</h2>
+      <p>Create unique classes</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag "contents.png", class: "card"  %>
+      <h2>Select your Subject</h2>
+      <p>Choose your Sensei, and keep track of when your Sensei is avaliable</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag "class.png", class: "card"  %>
+      <h2>Sensei and Student</h2>
+      <p>You can be both</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag "love_sensei.jpg", class: "card"  %>
+      <h2>Share and love</h2>
+      <p>Join a community you will love.</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="text-center padded" id="newsletter">
+  <h2>Get news from us</h2>
+  <p>Leave us your mail and get news from us</p>
+  <form class="form-inline">
+    <input type="email" placeholder="davis@sensei.com.br" class="form-control">
+    <input type="submit" value="Subscribe" class="btn btn-primary btn-bordered btn-bordered-primary">
+  </form>
+</div>
+
+<div id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4">
+        <ul class="list-inline">
+          <li><a href=""><i class="fab fa-youtube"></i></a></li>
+          <li><a href=""><i class="fab fa-instagram"></i></a></li>
+          <li><a href=""><i class="fab fa-facebook"></i></a></li>
+          <li><a href=""><i class="fab fa-twitter"></i></a></li>
+        </ul>
+      </div>
+      <div class="col-xs-8 text-right">
+        <p>This is a DemoDay challenge @ LeWagon</p>
+      </div>
+    </div>
+  </div>
+</div>
