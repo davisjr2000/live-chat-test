@@ -10,6 +10,8 @@
           <h5 style="color: gray"><%= @sensei.user.description %></h5>
            <% if @sensei.user == current_user %>
             <%= link_to 'Defina sua disponibilidade para aulas', sensei_agendas_path(@sensei), class: 'btn btn-primary' %>
+            <% else %>
+            <button class="btn btn-primary">Aula Instantânea!</button>
            <% end %>
         </div>
       </div>
