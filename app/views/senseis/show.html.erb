@@ -1,6 +1,18 @@
-<h1>Sensei <%= @sensei.user.email %></h1>
-
-<% if @sensei.user == current_user %>
-  <%= link_to 'Defina sua disponibilidade para aulas', sensei_agendas_path(@sensei), class: 'btn btn-primary' %>
-<% end %>
-
+<div class="container">
+  <div class="sensei-profile">
+      <div class="row">
+        <div class="col-xs-6">
+          <%= cl_image_tag @sensei.user.photo, height: 400, width: 500, crop: :fill %>
+        </div>
+        <div class="col-xs-6">
+          <h1> Sensei <%= @sensei.user.username %> <i class="fas fa-chalkboard-teacher"></i></h1>
+          <h3><%= @sensei.user.email %></h3>
+          <h5 style="color: gray"><%= @sensei.user.description %></h5>
+           <% if @sensei.user == current_user %>
+            <%= link_to 'Defina sua disponibilidade para aulas', sensei_agendas_path(@sensei), class: 'btn btn-primary' %>
+           <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

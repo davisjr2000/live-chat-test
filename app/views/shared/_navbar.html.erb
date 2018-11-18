@@ -3,12 +3,18 @@
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
   <%= image_tag "logo.png", height: 50 %>
   <% end %>
-
+   <%= form_tag senseis_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search-sensei",
+        placeholder: "Procurar Sensei"
+      %>
+    <% end %>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <%= link_to "Check the classes", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "How it works", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Check the sensei's", senseis_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Aulas", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Quem somos", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Senseis", senseis_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% if user_signed_in? %>
 
@@ -18,13 +24,13 @@
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <% if @user.sensei.present? %>
-          <li> <%= link_to "Sensei Profile", sensei_path(@user.sensei), class: "navbar-wagon-item navbar-wagon-link" %> </li>
+          <% if current_user.sensei.present? %>
+          <li> <%= link_to "Sensei Profile", sensei_path(current_user.sensei), class: "navbar-wagon-item navbar-wagon-link" %> </li>
           <% end %>
           <li>
-            <%= link_to user_path(@user) do %>
+            <%= link_to user_path(current_user) do %>
             <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
             <% end %>
           </li>

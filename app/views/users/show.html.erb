@@ -1,27 +1,29 @@
 <div class="container">
-  <div class="text-center">
+  <div class="user-profile">
+      <div class="row">
+        <div class="col-xs-6">
+          <%= cl_image_tag @user.photo, height: 400, width: 500, crop: :fill %>
+        </div>
+        <div class="col-xs-6">
+          <h1> <%= @user.username %> <i class="fas fa-user"></i></h1>
+          <h3><%= @user.email %></h3>
+          <h5 style="color: gray"><%= @user.description %></h5>
+      <% if @user.sensei %>
+        <h2><%= link_to "Sensei Dashboard", @user.sensei %></h2>
+      <% else %>
+      <div class="wrapp">
 
-    <h1> </h1>
-    <h1>User: <%= @user.email %></h1>
-    <h2><%= @user.full_name %></h2>
-  </div>
-  <% if @user.sensei %>
-    <%= link_to @user.sensei do %>
-    <h2>SENSEI PAGE </h2>
-    <% end %>
-    <% end %>
-  <% else %>
-  <div class="wrapp">
-    <div class="division1 text-left">
 
-      <%= link_to new_sensei_path(@user) do %>
-      <%= image_tag "class.png", class: 'card' %>
-      <h2>
-        Seja um Sensei
-      </h2>
-      <% end %>
+          <%= link_to new_sensei_path(@user) do %>
+          <h2>
+          <%= image_tag "class.png", class: 'card be-sensei' %>
+            Seja um Sensei
+          </h2>
+          <% end %>
+          <% end %>
 
+        </div>
+      </div>
     </div>
   </div>
-
 </div>

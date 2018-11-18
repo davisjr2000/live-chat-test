@@ -51,3 +51,24 @@ select {
 .agenda {
   text-size: 300px;
 }
+
+.user-profile{
+  background-color: white;
+  padding:20px;
+  margin:20px;
+}
+
+.sensei-profile{
+  background-color: white;
+  padding:20px;
+  margin:20px;
+}
+
+.sensei-profile-index:hover{
+  border: solid 1px black;
+}
+
+.be-sensei{
+  height:50px;
+
+}
