@@ -1,50 +1,44 @@
-<div class="banner">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(25, 104, 10,0.3) 0%, rgba(64, 140, 49,0.3) 50%), url('https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
   <div class="banner-content">
-  <div class="bg-video">
-    <div class="video-container">
-    <video class="pexels" src ='assets/pexels.webm' controls muted loop playinline autoplay style; background none; overflow: hidden;">
-    </video>
-    <%= render "banner_search" %>
-    </div>
-    </div>
-    <h1 style="text-align: center;">Sensei</h1>
-    <p style="text-align: center;">The best way to have classes, learn and teach what you want,  whatever you want </p>
-    <br></br>
+    <h1 style="color: white">Sensei</h1>
+    <h4 style="color: white">Aulas instantâneas quando você quiser</h4>
+    <%= form_tag senseis_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Procurar Sensei"
+      %>
+    <% end %>
   </div>
 </div>
-
+<br>
 <div class="container text-center padded features">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-3">
+    <div class="col-xs-12 col-sm-6 col-md-4">
       <%= image_tag "sensei.png", class: 'card' %>
-      <h2>Be an Sensei</h2>
-      <p>Create unique classes</p>
+      <h2>Seja um Sensei</h2>
+      <p>Dê aulas da sua maneira.</p>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-3">
+    <div class="col-xs-12 col-sm-6 col-md-4">
       <%= image_tag "contents.png", class: "card"  %>
-      <h2>Select your Subject</h2>
-      <p>Choose your Sensei, and keep track of when your Sensei is avaliable</p>
+      <h2>Escolha uma Matéria</h2>
+      <p>Tire suas dúvidas de maneira rápida.</p>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-3">
+    <div class="col-xs-12 col-sm-6 col-md-4">
       <%= image_tag "class.png", class: "card"  %>
-      <h2>Sensei and Student</h2>
-      <p>You can be both</p>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <%= image_tag "love_sensei.jpg", class: "card"  %>
-      <h2>Share and love</h2>
-      <p>Join a community you will love.</p>
+      <h2>Modo Urgência</h2>
+      <p>Chegar de madrugar. Tenha uma aula que garanta sua nota.</p>
     </div>
   </div>
 </div>
 
 <br></br>
 <div class="text-center padded" id="newsletter">
-  <h2>Get news from us</h2>
-  <p>Leave us your mail and get news from us</p>
+  <h2>Recebe nossas novidades!</h2>
+  <p>Deixe seu e-mail para não perder nossas notícias</p>
   <form class="form-inline">
     <input type="email" placeholder="davis@sensei.com.br" class="form-control">
-    <input type="submit" value="Subscribe" class="btn btn-primary btn-bordered btn-bordered-primary">
+    <input type="submit" value="Inscrever" class="btn btn-primary btn-bordered btn-bordered-primary">
   </form>
 </div>
 <br></br>
@@ -60,7 +54,7 @@
         </ul>
       </div>
       <div class="col-xs-8 text-right">
-        <p>This is a DemoDay challenge @ LeWagon</p>
+        <p>Sensei TM</p>
       </div>
     </div>
   </div>
