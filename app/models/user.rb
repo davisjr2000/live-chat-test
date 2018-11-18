@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :lesson_requests
   has_one :sensei
+  mount_uploader :photo, PhotoUploader
 end

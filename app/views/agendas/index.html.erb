@@ -1,2 +1,37 @@
-<h1>Agenda#index</h1>
-<p>Find me in app/views/agenda/index.html.erb</p>
+<div class="container">
+  <div class="text-center">
+    <h1>Disponibilidade</h1>
+  </div>
+
+  <ul class="list-group">
+    <% @agendas.each do |agenda| %>
+      <div class="container">
+        <li class="list-group-item">
+          Dia: <%= agenda.date %>
+          <br>
+          Horários:
+          <% agenda.time.each do |t| %>
+            <% unless t.nil? %>
+              <%= @select_options[t] %> |
+            <% end %>
+          <% end %>
+        </li>
+      </div>
+    <% end %>
+  </ul>
+  <br>
+  <br>
+  <div class="container">
+    <%= form_for [@sensei, @agenda], :html => {:class => "form-horizontal center"} do |f| %>
+      <%= date_field("agenda", "date", min: Date.today) %>
+      <br>
+      <br>
+      <% @select_options.each do |k, v| %>
+        <%= f.check_box :time, { multiple: true }, k, nil %>
+        <%= f.label v %>
+        <br>
+      <% end %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

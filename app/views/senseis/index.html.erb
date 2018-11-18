@@ -1,7 +1,15 @@
-<h1>Sensei#index</h1>
-<p>Find me in app/views/sensei/index.html.erb</p>
-<% @senseis.each do |sensei| %>
-  <%= link_to sensei_path(sensei) do %>
-    <h3> Sensei <%= sensei.user.email %> </h3>
-  <% end %>
-<% end %>
+<div class="container">
+  <div class="sensei-profile">
+    <h1 class="text-center">SENSEIS <i class="fas fa-chalkboard-teacher"></i></h1>
+    <div class="row">
+      <% @senseis.each do |sensei| %>
+          <%= link_to sensei_path(sensei) do %>
+            <div class="col-xs-4 sensei-profile-index">
+              <%= cl_image_tag sensei.user.photo , height: 100, width: 100, crop: :fill;%>
+              <h4> Sensei <%= sensei.user.username %> </h4>
+            </div>
+            <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>

@@ -1,2 +1,20 @@
-<h1>Agenda#new</h1>
-<p>Find me in app/views/agenda/new.html.erb</p>
+<div class="container">
+  <div class="text-center">
+    <h1>Availabilities#new</h1>
+  </div>
+
+
+<%= form_for [@sensei, @agenda], :html => {:class => "form-horizontal center"} do |f| %>
+  <%= date_field("agenda", "date", min: Date.today) %>
+  <br>
+  <% @select_options.each do |k, v| %>
+    <%= f.check_box :time, { multiple: true }, k, nil %>
+    <%= f.label v %>
+    <br>
+  <% end %>
+  <%= f.submit %>
+<% end %>
+
+
+
+</div>
