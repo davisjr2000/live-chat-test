@@ -5,9 +5,9 @@ class Sensei < ApplicationRecord
   include PgSearch
   pg_search_scope :search_by_username,
     associated_against: {
-      user: [ :username ]
+      sensei_subjects: [ :subject_id ]
     },
     using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+      tsearch: { prefix: true }
     }
 end

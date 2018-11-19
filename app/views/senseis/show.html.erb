@@ -13,6 +13,10 @@
            <% if @sensei.user == current_user %>
               <%= link_to 'Defina sua disponibilidade para aulas', sensei_agendas_path(@sensei), class: 'btn btn-primary' %>
               <br>
+              <h3> Ensina:</h3>
+              <% @senseisubs.each do |subject| %>
+               <%= subject.subject.title %>
+              <% end %>
               <br>
               <%= link_to 'Defina as matérias que deseja ensinar', sensei_sensei_subjects_path(@sensei), class: 'btn btn-primary' %>
             <% else %>
