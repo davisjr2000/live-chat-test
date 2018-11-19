@@ -15,7 +15,6 @@ end
 subjects = ["Math","English","Portuguese","Spanish","Biology","Chemistry","Physics","Geography","History"]
 
 subjects.each do |subject|
-  sub = SchoolSubject.new
-  sub.title = subject
+  sub = Subject.new(title: subject)
   sub.save
 end

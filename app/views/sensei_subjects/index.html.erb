@@ -1,2 +1,24 @@
-<h1>SenseiSubject#index</h1>
-<p>Find me in app/views/sensei_subject/index.html.erb</p>
+<div class="container">
+  <div class="text-center">
+    <h1>Materias</h1>
+  </div>
+
+  <ul class="list-group">
+    <% @sensei_subjects.each do |sensei_subject| %>
+      <div class="container">
+        <li class="list-group-item">
+          Matéria: <%= sensei_subject.subject.title %>
+          <br>
+        </li>
+      </div>
+    <% end %>
+  </ul>
+  <br>
+  <br>
+  <div class="container">
+    <%= form_for [@sensei, @sensei_subject], :html => {:class => "form-horizontal center"} do |f| %>
+      <%= f.collection_select :subject_id, Subject.all, :id, :title %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
