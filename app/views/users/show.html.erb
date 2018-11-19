@@ -14,10 +14,13 @@
         <% else %>
         <div class="wrapp">
             <h2>
+              <%= form_for @sensei, :html => {:class => "form-horizontal center"} do |f| %>
+                <%= image_tag "class.png", class: 'card be-sensei' %>
+                <%= f.submit "Become a Sensei" %>
+              <% end  %>
+              <br>
               <%= link_to new_sensei_path do %>
-              <%= image_tag "class.png", class: 'card be-sensei' %>
-              Become a Sensei!
-             <% end %>
+                Become a Sensei! (tirar)
            <% end %>
             </h2>
           </div>
