@@ -5,9 +5,9 @@ class SenseisController < ApplicationController
   end
 
   def create
-    @user = current_user
     @sensei = Sensei.new
     @sensei.user = current_user
+    @sensei.school_subject = SchoolSubject.find_by(title: params[:sensei][:school_subject])
     if @sensei.save
       redirect_to @sensei
     else

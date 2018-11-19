@@ -6,6 +6,7 @@
         </div>
         <div class="col-xs-6">
           <h1> Sensei <%= @sensei.user.username %> <i class="fas fa-chalkboard-teacher"></i></h1>
+          <h3> Teaches <%= @sensei.school_subject.title %></h3>
           <h3><%= @sensei.user.email %></h3>
           <h5 style="color: gray"><%= @sensei.user.description %></h5>
            <% if @sensei.user == current_user %>

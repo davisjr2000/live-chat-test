@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_11_19_132839) do
+=======
+ActiveRecord::Schema.define(version: 2018_11_19_132332) do
+>>>>>>> e0c7bb68fb182086b6af749831aede38d2264265
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +91,8 @@ ActiveRecord::Schema.define(version: 2018_11_19_132839) do
     t.float "avg_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "school_subject_id"
+    t.index ["school_subject_id"], name: "index_senseis_on_school_subject_id"
     t.index ["user_id"], name: "index_senseis_on_user_id"
   end
 
@@ -124,5 +130,6 @@ ActiveRecord::Schema.define(version: 2018_11_19_132839) do
   add_foreign_key "messages", "users"
   add_foreign_key "sensei_subjects", "senseis"
   add_foreign_key "sensei_subjects", "subjects"
+  add_foreign_key "senseis", "school_subjects"
   add_foreign_key "senseis", "users"
 end
