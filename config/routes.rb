@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
+  get "/about", to: 'pages#about'
   root to: 'pages#home'
   resources :chat_rooms, only: [:show, :index] do
     resources :messages, only: [:create]
