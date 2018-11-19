@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 2018_11_18_021225) do
     t.string "username"
     t.string "photo"
     t.text "description"
+    t.boolean "admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
