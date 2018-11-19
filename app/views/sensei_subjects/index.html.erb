@@ -8,6 +8,7 @@
       <div class="container">
         <li class="list-group-item">
           Matéria: <%= sensei_subject.subject.title %>
+          Preço: <%= sensei_subject.price_per_hour %>
           <br>
         </li>
       </div>
@@ -18,6 +19,7 @@
   <div class="container">
     <%= form_for [@sensei, @sensei_subject], :html => {:class => "form-horizontal center"} do |f| %>
       <%= f.collection_select :subject_id, Subject.all, :id, :title %>
+      <%= f.number_field :price_per_hour %>
       <%= f.submit %>
     <% end %>
   </div>
