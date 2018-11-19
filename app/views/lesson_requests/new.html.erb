@@ -1,2 +1,22 @@
-<h1>LessonRequest#new</h1>
-<p>Find me in app/views/lesson_request/new.html.erb</p>
+<div class="container">
+  <h1 class="text-center">Solicite sua Aula</h1>
+
+  <h2>Sensei: <strong><%= @sensei.user.username %></strong></h2>
+  <br>
+  <br>
+
+  <%= simple_form_for @lesson_request do |f| %>
+  <%= f.input :subject, collection: @sensei.subjects %>
+  <br>
+  <br>
+  <%= f.label "Descreva o conteúdo desejado para sua aula da forma mais detalhada possível" %>
+  <%= f.input :description, label: false %>
+  <br>
+  <br>
+  <%= f.button :submit, value: "Solicite a sua aula", class: "btn btn-primary"  %>
+  <% end %>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
