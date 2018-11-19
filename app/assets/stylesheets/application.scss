@@ -42,12 +42,6 @@
   justify-content: space-between;
 }
 
-select {
-  height: 650px !important;
-  width: 90px;
-  text-align: center;
-}
-
 .agenda {
   text-size: 300px;
 }
@@ -64,6 +58,10 @@ select {
   margin:20px;
   border-radius: 10px;
   border: 1px solid grey;
+}
+
+.sensei-profile-index{
+  border: 1px solid white;
 }
 
 .sensei-profile-index:hover{
