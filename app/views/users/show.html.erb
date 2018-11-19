@@ -13,9 +13,9 @@
       <% else %>
       <div class="wrapp">
           <h2>
-            <%= simple_form_for @sensei do |f| %>
+            <%= link_to new_sensei_path do %>
             <%= image_tag "class.png", class: 'card be-sensei' %>
-            <%= f.button :submit, value: "Be a Sensei", class: "btn btn-primary"  %>
+            Become a Sensei!
            <% end %>
          <% end %>
           </h2>
