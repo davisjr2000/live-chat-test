@@ -13,6 +13,9 @@
   <%= f.input :description, label: false %>
   <br>
   <br>
+  <%= f.input :duration, collection: [["30 min", 30], ["1 h", 60], ["1 h e 30 min", 90], ["2 h", 120], ["2 h e 30 min", 150]], label: "Duração" %>
+
+
   <%= f.button :submit, value: "Solicite a sua aula", class: "btn btn-primary"  %>
   <% end %>
   <br>
