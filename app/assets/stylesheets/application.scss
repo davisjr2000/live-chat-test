@@ -61,12 +61,16 @@
 }
 
 .sensei-profile-index{
-  border: 1px solid white;
+  border: 1px solid black;
+  padding:10px;
+  border-radius:5px;
+
 }
 
 .sensei-profile-index:hover{
-  border: solid 1px black;
+  border: solid 1px gray;
   border-radius: 5px;
+  background-color: rgba(233,233,233,0.7)
 }
 
 .be-sensei{
