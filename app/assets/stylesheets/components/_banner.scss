@@ -24,3 +24,14 @@
   background-image : image-url("")
 }
 */
+
+.banner-profile{
+  color: black;
+  text-align: center;
+  height: 100vh;
+  background-size: cover !important;
+  background-position: 0px -180px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
