@@ -1,3 +1,4 @@
+<div class="banner-profile" style="background-image: url('https://pro.com/blog/wp-content/uploads/2015/01/bigstock-Bamboo-Background-50435594-e1423768775746.jpg');">
 <div class="container">
   <div class="sensei-profile">
       <div class="row">
@@ -6,13 +7,16 @@
         </div>
         <div class="col-xs-6">
           <h1> Sensei <%= @sensei.user.username %> <i class="fas fa-chalkboard-teacher"></i></h1>
-          <h3> Teaches <%= @sensei.school_subject.title %></h3>
           <h3><%= @sensei.user.email %></h3>
+          <h4> Dando aulas desde <%= @sensei.created_at.to_s.split(" ")[0].split("-").reverse.join("/")%> </h4>
           <h5 style="color: gray"><%= @sensei.user.description %></h5>
            <% if @sensei.user == current_user %>
-            <%= link_to 'Defina sua disponibilidade para aulas', sensei_agendas_path(@sensei), class: 'btn btn-primary' %>
+              <%= link_to 'Defina sua disponibilidade para aulas', sensei_agendas_path(@sensei), class: 'btn btn-primary' %>
+              <br>
+              <br>
+              <%= link_to 'Defina as matérias que deseja ensinar', sensei_sensei_subjects_path(@sensei), class: 'btn btn-primary' %>
             <% else %>
-            <button class="btn btn-primary">Aula Instantânea!</button>
+              <button class="btn btn-primary">Aula Instantânea!</button>
            <% end %>
         </div>
       </div>

@@ -1,7 +1,14 @@
 <div class="container">
   <div class="sensei-profile">
-    <h1 class="text-center">AVALIABE SENSEIS <i class="fas fa-chalkboard-teacher"></i></h1>
+    <% if params[:query].nil? || params[:query].empty? %>
+      <h1 class="text-center"> Senseis<i class="fas fa-chalkboard-teacher"></i></h1>
+    <% else %>
+      <h1 class="text-center"> Senseis de <%= params[:query] %> <i class="fas fa-chalkboard-teacher"></i></h1>
+    <% end %>
     <div class="row">
+      <% if @senseis.length.zero? %>
+      <h4 style="color: gray; text-align: center"> Desculpe, não há Senseis disponíveis para "<%= params[:query] %>" <i class="far fa-frown"></i></h4>
+      <% end %>
       <% @senseis.each do |sensei| %>
           <%= link_to sensei_path(sensei) do %>
             <div class="col-xs-4 sensei-profile-index">
