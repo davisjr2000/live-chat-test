@@ -1,5 +1,5 @@
 <div class="container text-center">
-  <h1>Be a Sensei</h1>
+  <h1>Be a Sensei (não deveria passar por esta View!!!</h1>
   <%= simple_form_for @sensei do |f| %>
     <%= f.input :school_subject, collection: SchoolSubject.all.map(&:title) %>
     <%= f.button :submit, value: "Be a Sensei", class: "btn btn-primary"  %>
