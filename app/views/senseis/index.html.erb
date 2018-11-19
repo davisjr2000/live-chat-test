@@ -11,9 +11,18 @@
       <% end %>
       <% @senseis.each do |sensei| %>
           <%= link_to sensei_path(sensei) do %>
-            <div class="col-xs-4 sensei-profile-index">
-              <%= cl_image_tag sensei.user.photo , height: 100, width: 100, crop: :fill;%>
-              <h4> Sensei <%= sensei.user.username %> </h4>
+            <div class="col-xs-12 sensei-profile-index">
+              <div class="row">
+                <div class="col-xs-3">
+                <%= cl_image_tag sensei.user.photo , height: 200, width: 200,class: 'img-circle', crop: :fill;%>
+                </div>
+                <div class="col-xs-9">
+                <h2> Sensei <%= sensei.user.username %> </h2>
+                <% sensei.sensei_subjects.each do |subj| %>
+                  <h5 style="color: black"><%= subj.subject.title %></h5>
+                <% end %>
+                </div>
+              </div>
             </div>
             <% end %>
         <% end %>
