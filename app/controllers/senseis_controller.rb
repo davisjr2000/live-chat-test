@@ -17,7 +17,7 @@ class SenseisController < ApplicationController
 
   def index
     if params[:query].present?
-      @senseis = Sensei.search_by_username(params[:query])
+      @senseis = Sensei.search_by_subject(params[:query])
     else
       @senseis = Sensei.all
     end

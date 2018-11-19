@@ -21,16 +21,10 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-                <p>wtf</p>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
-    <p>wtf</p>
   </div>
-
-  <input id='fileid' type='file' hidden/>
-  <input id='buttonid' type='button' value='Upload MB' />
-
-  <div class="form-actions">
+ <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
