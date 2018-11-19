@@ -1,86 +1,99 @@
-<div class="container">
-  <div class="text-center">
+<% banner = image_path('36568.gif') %>
+<div class="background-about" style="background-image: url('<%=banner %> ');">
 
-    <h1>Sobre Nos</h1>
+  <div class="container">
+    <div class="text-center">
+
+      <h1>Sobre Nos</h1>
 
 
-    <p>A sensei eh um web site desenvolvido por estudantes da Le Wagon, com intuito de disponibilizar as melhores aulas por video do mercado</p>
-    <% bg_image = image_path('LeWagon-19.png') %>
-    <div class="banner-about" style="background-image: linear-gradient(-225deg, rgba(25, 104, 10,0.3) 0%, rgba(64, 140, 49,0.3) 50%), url('<%= bg_image  %>');">
-      <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <%= image_tag "LeWagon-19.png", class: 'card' %>
-        </div>
-        <div class="flip-card-back">
-          <%= image_tag "LeWagon-6.png", class: 'card' %>
-        </div>
+      <p>A sensei eh um web site desenvolvido por estudantes da Le Wagon, com intuito de disponibilizar as melhores aulas do mercado</p>
+      <% bg_image = image_path('LeWagon-19.png') %>
+      <div class="banner-about" style="background-image: linear-gradient(-225deg, rgba(25, 32, 10,0.3) 0%, rgba(64, 32, 49,0.3) 50%), url('<%= bg_image  %>');">
+
+
+
+
+
+
+
       </div>
-      </div>
-    </div>
+      <h1 id= "titulo">A Equipe</h1>
+      <br>
+      <br>
+      <br>
+      <div class="flex">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <%= image_tag "LeWagon-18.png", class: 'card' %>
+            </div>
+            <div class="flip-card-back">
+              <h1>Davis Jr</h1>
+              <p>Full stach developer</p>
+              <p> <a href="https://thierrymr.github.io/profile/" target="_blank">Clique Profile</a></p>
+              <p><a href="https://www.facebook.com/thierry.martins.58?ref=bookmarks" target="_blank"><i <%= icon("fa","facebook") %>></i></a>
+               <a href="https://www.linkedin.com/in/thierry-martins-ribeiro-silvagnoli-444068120/" target="_blank"><i <%= icon("fa","linkedin") %>></i></a>
+               <a href="https://github.com/ThierryMR" target="_blank"><i <%= icon("fa","github") %>></i></a></p>
+             </div>
+           </div>
+         </div>
 
 
 
-    <div class="flex">
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <%= image_tag "LeWagon-18.png", class: 'card' %>
-        </div>
-        <div class="flip-card-back">
-          <h1>Davis Jr</h1>
-          <p>Full stach developer</p>
-          <p>Add description</p>
-        </div>
-      </div>
-      </div>
 
+         <!-- Tico -->
+         <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <%= image_tag "LeWagon-36-3.png", class: 'card' %>
 
+            </div>
+            <div class="flip-card-back">
+              <h1>Thiago</h1>
+              <p>Full stach developer</p>
+              <p> <a href="https://thierrymr.github.io/profile/" target="_blank">Clique Profile</a></p>
+              <p><a href="https://www.facebook.com/thierry.martins.58?ref=bookmarks" target="_blank"><i <%= icon("fa","facebook") %>></i></a>
+               <a href="https://www.linkedin.com/in/thierry-martins-ribeiro-silvagnoli-444068120/" target="_blank"><i <%= icon("fa","linkedin") %>></i></a>
+               <a href="https://github.com/ThierryMR" target="_blank"><i <%= icon("fa","github") %>></i></a></p>
+             </div>
+           </div>
+         </div>
 
+         <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <%= image_tag "henrique-meio.png", class: 'card' %>
 
-        <!-- Tico -->
-      <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <%= image_tag "LeWagon-36-3.png", class: 'card' %>
+            </div>
+            <div class="flip-card-back">
+              <h1>Henrique</h1>
+              <p>Full stach developer</p>
+              <p> <a href="https://thierrymr.github.io/profile/" target="_blank">Clique Profile</a></p>
+              <p><a href="https://www.facebook.com/thierry.martins.58?ref=bookmarks" target="_blank"><i <%= icon("fa","facebook") %>></i></a>
+               <a href="https://www.linkedin.com/in/thierry-martins-ribeiro-silvagnoli-444068120/" target="_blank"><i <%= icon("fa","linkedin") %>></i></a>
+               <a href="https://github.com/ThierryMR" target="_blank"><i <%= icon("fa","github") %>></i></a></p>
+             </div>
+           </div>
+         </div>
 
-        </div>
-        <div class="flip-card-back">
-          <h1>Thiago</h1>
-          <p>Full stach developer</p>
-          <p>Add description</p>
-        </div>
-      </div>
-      </div>
+         <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <%= image_tag "LeWagon-36-5.png", class: 'card' %>
 
-      <div class="flip-card">
-      <div class="flip-card-inner">
-      <div class="flip-card-front">
-          <%= image_tag "henrique.png", class: 'card' %>
+            </div>
+            <div class="flip-card-back">
+              <h1>Thierry</h1>
+              <p>Full stach developer</p>
+              <p> <a href="https://thierrymr.github.io/profile/" target="_blank">Clique Profile</a></p>
+              <p><a href="https://www.facebook.com/thierry.martins.58?ref=bookmarks" target="_blank"><i <%= icon("fa","facebook") %>></i></a>
+               <a href="https://www.linkedin.com/in/thierry-martins-ribeiro-silvagnoli-444068120/" target="_blank"><i <%= icon("fa","linkedin") %>></i></a>
+               <a href="https://github.com/ThierryMR" target="_blank"><i <%= icon("fa","github") %>></i></a></p>
+             </div>
+           </div>
+         </div>
+       </div>
 
-        </div>
-        <div class="flip-card-back">
-          <h1>Henrique</h1>
-          <p>Full stach developer</p>
-          <p>Add description</p>
-        </div>
-      </div>
-      </div>
-
-      <div class="flip-card">
-      <div class="flip-card-inner">
-      <div class="flip-card-front">
-          <%= image_tag "LeWagon-36-5.png", class: 'card' %>
-
-        </div>
-        <div class="flip-card-back">
-          <h1>Thierry</h1>
-          <p>Full stach developer</p>
-          <p>Add description</p>
-        </div>
-      </div>
-      </div>
-  </div>
-  </div>
-
-</div>
+     </div>
+   </div>
