@@ -1,0 +1,6 @@
+# config/meta.yml
+
+meta_product_name: "Sensei"
+meta_title: "Sensei - Aulas online em um click"
+meta_description: "Chegar de madrugar. Tenha uma aula que garanta sua nota."
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
