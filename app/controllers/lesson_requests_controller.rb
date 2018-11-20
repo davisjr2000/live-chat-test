@@ -28,6 +28,11 @@ class LessonRequestsController < ApplicationController
   end
 
   def index
+    # if
+    #   @lesson_requests = LessonRequest.where(user_id: current_user)
+    # else
+    #   @lesson_requests = LessonRequest.where(sensei_id: current_user.sensei)
+    # end
   end
 
   def destroy
