@@ -9,6 +9,7 @@
             <h1> <%= @user.username %> <%= icon('fa', 'user') %></h1>
             <h3><%= @user.email %></h3>
             <h5 style="color: gray"><%= @user.description %></h5>
+            <%= link_to 'Minhas aulas - Estudante', lesson_requests_path("student"), class: 'btn btn-primary' %>
         <% if @user.sensei %>
           <h2><%= link_to "Sensei Dashboard", @user.sensei %></h2>
         <% else %>
