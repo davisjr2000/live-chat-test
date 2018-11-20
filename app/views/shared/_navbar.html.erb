@@ -61,9 +61,25 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Sensei</a></li>
-        <li><a href="#">Student</a></li>
-        <li><a href="#">Check the classes</a></li>
+        <% if current_user.sensei.present? %>
+          <li> <%= link_to "Sensei Profile", sensei_path(current_user.sensei), class: "navbar-wagon-item navbar-wagon-link" %> </li>
+          <% end %>
+          <li>
+            <%= link_to user_path(current_user) do %>
+            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to edit_user_registration_path(@user) do %>
+            <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+            <% end %>
+          </li>
       </ul>
     </div>
   </div>

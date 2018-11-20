@@ -20,6 +20,7 @@
   <% if current_user == @lesson_request.sensei.user %>
     <% if @lesson_request.sensei_accepted == true %>
       <button id="sensei_cancel">Cancelar a aula</button>
+      <%= button_to "Entrar na sala", chat_room_path(@chat_room), method: :get %>
     <% else %>
       <%= button_to "Aceitar a aula", lesson_request_sensei_accepted_path(@lesson_request), method: :get %>
     <% end %>
@@ -30,8 +31,5 @@
       <button id="student_cancel">Cancelar esta aula</button>
     <% end %>
   <% end %>
-
-
-
 </div>
 
