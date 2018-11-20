@@ -18,6 +18,7 @@ class LessonRequestsController < ApplicationController
 
   def show
     @lesson_request = LessonRequest.find(params[:id])
+    @chat_room = ChatRoom.where(lesson_request_id: @lesson_request.id).first
   end
 
   def sensei_accepted
