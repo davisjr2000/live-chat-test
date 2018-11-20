@@ -10,7 +10,7 @@ class LessonRequestsController < ApplicationController
     @lesson_request.user = current_user
     @lesson_request.amount = @lesson_request.duration * SenseiSubject.where(subject_id: @lesson_request.subject_id, sensei_id: @lesson_request.sensei_id).first.price_per_hour / 60
     if @lesson_request.save
-      redirect @lesson_request
+      redirect_to @lesson_request
     else
       raise
     end
