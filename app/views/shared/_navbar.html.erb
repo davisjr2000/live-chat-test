@@ -13,8 +13,9 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <%= link_to "Aulas", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Quem somos", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Quem somos", about_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Senseis", senseis_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
 
     <% if user_signed_in? %>
 

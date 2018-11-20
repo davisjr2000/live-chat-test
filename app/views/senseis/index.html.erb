@@ -1,15 +1,33 @@
-<div class="container">
-  <div class="sensei-profile">
-    <h1 class="text-center">SENSEIS <i class="fas fa-chalkboard-teacher"></i></h1>
-    <div class="row">
-      <% @senseis.each do |sensei| %>
-          <%= link_to sensei_path(sensei) do %>
-            <div class="col-xs-4 sensei-profile-index">
-              <%= cl_image_tag sensei.user.photo , height: 100, width: 100, crop: :fill;%>
-              <h4> Sensei <%= sensei.user.username %> </h4>
-            </div>
-            <% end %>
+<body class="sensei-index">
+  <div class="container">
+    <div class="sensei-profile">
+      <% if params[:query].nil? || params[:query].empty? %>
+        <h1 class="text-center"> Senseis<i class="fas fa-chalkboard-teacher"></i></h1>
+      <% else %>
+        <h1 class="text-center"> Senseis de <%= params[:query] %> <i class="fas fa-chalkboard-teacher"></i></h1>
+      <% end %>
+      <div class="row">
+        <% if @senseis.length.zero? %>
+        <h4 style="color: gray; text-align: center"> Desculpe, não há Senseis disponíveis para "<%= params[:query] %>"</h4>
         <% end %>
+        <% @senseis.each do |sensei| %>
+            <%= link_to sensei_path(sensei) do %>
+              <div class="col-xs-8 sensei-profile-index">
+                <div class="row">
+                  <div class="col-xs-4">
+                  <%= cl_image_tag sensei.user.photo , height: 200, width: 200,class: 'img-circle', crop: :fill;%>
+                  </div>
+                  <div class="col-xs-8">
+                  <h2> Sensei <%= sensei.user.username %> </h2>
+                  <% sensei.sensei_subjects.each do |subj| %>
+                    <h5 style="color: black"><%= subj.subject.title %> | R$ <%= subj.price_per_hour %>/h</h5>
+                  <% end %>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+          <% end %>
+      </div>
     </div>
   </div>
-</div>
+</body>

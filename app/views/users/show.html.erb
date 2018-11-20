@@ -1,27 +1,27 @@
-<div class="container">
-  <div class="user-profile">
-      <div class="row">
-        <div class="col-xs-6">
-          <%= cl_image_tag @user.photo, height: 400, width: 500, crop: :fill %>
-        </div>
-        <div class="col-xs-6">
-          <h1> <%= @user.username %> <i class="fas fa-user"></i></h1>
-          <h3><%= @user.email %></h3>
-          <h5 style="color: gray"><%= @user.description %></h5>
-      <% if @user.sensei %>
-        <h2><%= link_to "Sensei Dashboard", @user.sensei %></h2>
-      <% else %>
-      <div class="wrapp">
-
-
-          <%= link_to new_sensei_path(@user) do %>
-          <h2>
-          <%= image_tag "class.png", class: 'card be-sensei' %>
-            Seja um Sensei
-          </h2>
-          <% end %>
-          <% end %>
-
+<div class="banner-profile" style="background-image: url('https://pennywise.sg/wp-content/uploads/2017/03/coffee-wooden-mac-theme-good-morning-21824.jpg');">
+  <div class="container">
+    <div class="user-profile">
+        <div class="row">
+          <div class="col-xs-6">
+            <%= cl_image_tag @user.photo, height: 400, width: 500, crop: :fill %>
+          </div>
+          <div class="col-xs-6">
+            <h1> <%= @user.username %> <%= icon('fa', 'user') %></h1>
+            <h3><%= @user.email %></h3>
+            <h5 style="color: gray"><%= @user.description %></h5>
+        <% if @user.sensei %>
+          <h2><%= link_to "Sensei Dashboard", @user.sensei %></h2>
+        <% else %>
+        <div class="wrapp">
+            <h2>
+              <%= form_for @sensei, :html => {:class => "form-horizontal center"} do |f| %>
+                <%= image_tag "class.png", class: 'card be-sensei' %>
+                <%= f.submit "Seja um Sensei!" %>
+              <% end  %>
+              <br>
+           <% end %>
+            </h2>
+          </div>
         </div>
       </div>
     </div>

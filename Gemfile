@@ -17,6 +17,10 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+# Admin
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
+
 gem 'pg_search'
 gem 'cloudinary', '~> 1.9', '>= 1.9.1'
 gem 'carrierwave', '~> 1.2'
@@ -32,4 +36,8 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
+end
+
+group :development do
+  gem 'rails_real_favicon'
 end

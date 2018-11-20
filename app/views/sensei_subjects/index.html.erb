@@ -1,2 +1,31 @@
-<h1>SenseiSubject#index</h1>
-<p>Find me in app/views/sensei_subject/index.html.erb</p>
+<div class="container">
+  <div class="text-center">
+    <h1>Matérias</h1>
+  </div>
+
+  <ul class="list-group" id="sensei-subjects">
+    <% @sensei_subjects.each do |sensei_subject| %>
+      <div class="container">
+        <li class="list-group-item">
+          <%= icon('fa', 'bookmark' ) %> <%= sensei_subject.subject.title %> |
+          R$ <%= sensei_subject.price_per_hour %>/hora|
+          <%= link_to sensei_subject_path(sensei_subject),
+              method: :delete,
+              data: { confirm: "Tem certeza?" } do %>
+              <%= icon('fa', 'trash') %>
+              <% end %>
+          <br>
+        </li>
+      </div>
+    <% end %>
+  </ul>
+  <br>
+  <br>
+  <div class="container">
+    <%= form_for [@sensei, @sensei_subject], :html => {:class => "form-horizontal center"} do |f| %>
+      <%= f.collection_select :subject_id, Subject.all, :id, :title %>
+      <%= f.number_field :price_per_hour %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

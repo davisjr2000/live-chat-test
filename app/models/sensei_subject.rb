@@ -1,5 +1,6 @@
 class SenseiSubject < ApplicationRecord
   belongs_to :sensei
   belongs_to :subject
-  has_many :school_subjects
+  validates :price_per_hour, uniqueness: true
+  validates_uniqueness_of :subject_id, :scope => :sensei_id
 end
