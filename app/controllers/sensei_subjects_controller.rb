@@ -15,7 +15,7 @@ class SenseiSubjectsController < ApplicationController
     if @sensei_subject.save
       sensei_sensei_subjects_path(@sensei)
     else
-      raise
+      redirect_to sensei_sensei_subjects_path(@sensei)
     end
   end
 
@@ -26,5 +26,8 @@ class SenseiSubjectsController < ApplicationController
   end
 
   def destroy
+    @sensei_subject = SenseiSubject.find(params[:id])
+    @sensei_subject.destroy
+    redirect_to sensei_sensei_subjects_path(@sensei_subject.sensei)
   end
 end

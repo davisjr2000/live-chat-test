@@ -12,7 +12,7 @@
 end
 
 
-subjects = ["Math","English","Portuguese","Spanish","Biology","Chemistry","Physics","Geography","History"]
+subjects = ["Matemática","Inglês","Português","Espanhol","Biologia","Química","Física","Geografia","História"]
 
 subjects.each do |subject|
   sub = Subject.new(title: subject)
