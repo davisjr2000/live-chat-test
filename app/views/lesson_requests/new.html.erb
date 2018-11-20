@@ -3,11 +3,10 @@
 
   <h2>Sensei: <strong><%= @sensei.user.username %></strong></h2>
   <br>
-  <br>
-
   <%= simple_form_for @lesson_request do |f| %>
-  <%= f.input :subject_id, collection: @sensei.subjects %>
+  <%= f.input :subject_id, collection: @sensei.subjects, label: "Matéria" %>
   <br>
+  <div class="price_hour"> </div>
   <br>
   <%= f.label "Descreva o conteúdo desejado para sua aula da forma mais detalhada possível" %>
   <%= f.input :description, label: false %>
@@ -16,7 +15,7 @@
   <%= f.input :duration, collection: [["30 min", 30], ["1 h", 60], ["1 h e 30 min", 90], ["2 h", 120], ["2 h e 30 min", 150]], label: "Duração" %>
 
   <%= f.hidden_field :sensei_id, :value => @sensei.id %>
-
+  <h2 class="price"> </h2>
   <%= f.button :submit, value: "Solicite a sua aula", class: "btn btn-primary"  %>
   <% end %>
   <br>
@@ -24,3 +23,18 @@
   <br>
   <br>
 </div>
+<script>
+  var subject = document.getElementById('lesson_request_subject_id')
+  var duration = document.getElementById('lesson_request_duration')
+  duration.addEventListener("change", function() {
+    var subjectId = subject.value
+    console.log(subjectId)
+
+
+    var xhReq = new XMLHttpRequest();
+    xhReq.open("GET", "/senseis/" + "<%= @sensei.id %>" + "/sensei_subjects/price?subject=" + subjectId + "&duration=" + this.value, false);
+    xhReq.send(null)
+
+    var price = document.querySelector(".price").innerHTML = "Price: R$" + JSON.parse(xhReq.responseText).value
+  })
+</script>
