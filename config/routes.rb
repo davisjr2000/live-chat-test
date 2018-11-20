@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :senseis, only: [:new, :create, :index, :show] do
     resources :agendas, only: [:new, :create, :index, :edit, :update, :destroy]
-    resources :sensei_subjects, only: [:new, :create, :index, :destroy]
-
+    resources :sensei_subjects, only: [:new, :create, :index]
   end
+  resources :sensei_subjects, only: [:destroy]
   resources :subjects, only: [:index]
   resources :lesson_requests, only: [:new, :create, :show, :index, :destroy]
 

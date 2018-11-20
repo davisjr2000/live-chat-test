@@ -1,14 +1,19 @@
 <div class="container">
   <div class="text-center">
-    <h1>Materias</h1>
+    <h1>Matérias</h1>
   </div>
 
-  <ul class="list-group">
+  <ul class="list-group" id="sensei-subjects">
     <% @sensei_subjects.each do |sensei_subject| %>
       <div class="container">
         <li class="list-group-item">
-          Matéria: <%= sensei_subject.subject.title %>
-          Preço: <%= sensei_subject.price_per_hour %>
+          <%= icon('fa', 'bookmark' ) %> <%= sensei_subject.subject.title %> |
+          R$ <%= sensei_subject.price_per_hour %>/hora|
+          <%= link_to sensei_subject_path(sensei_subject),
+              method: :delete,
+              data: { confirm: "Tem certeza?" } do %>
+              <%= icon('fa', 'trash') %>
+              <% end %>
           <br>
         </li>
       </div>

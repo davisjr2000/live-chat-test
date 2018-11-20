@@ -20,7 +20,7 @@
                   <div class="col-xs-8">
                   <h2> Sensei <%= sensei.user.username %> </h2>
                   <% sensei.sensei_subjects.each do |subj| %>
-                    <h5 style="color: black"><%= subj.subject.title %></h5>
+                    <h5 style="color: black"><%= subj.subject.title %> | R$ <%= subj.price_per_hour %>/h</h5>
                   <% end %>
                   </div>
                 </div>
