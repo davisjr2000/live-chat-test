@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :senseis, only: [:new, :create, :index, :show] do
     resources :agendas, only: [:new, :create, :index, :edit, :update, :destroy]
     resources :sensei_subjects, only: [:new, :create, :index]
+    get '/sensei_subjects/price', to: 'sensei_subjects#price'
   end
   resources :sensei_subjects, only: [:destroy]
   resources :subjects, only: [:index]

@@ -10,7 +10,7 @@ class LessonRequestsController < ApplicationController
     @lesson_request.user = current_user
     @lesson_request.amount = @lesson_request.duration * SenseiSubject.where(subject_id: @lesson_request.subject_id, sensei_id: @lesson_request.sensei_id).first.price_per_hour / 60
     if @lesson_request.save
-      redirect @lesson_request
+      redirect_to @lesson_request
     else
       raise
     end
@@ -18,6 +18,7 @@ class LessonRequestsController < ApplicationController
 
   def show
     @lesson_request = LessonRequest.find(params[:id])
+    @chat_room = ChatRoom.where(lesson_request_id: @lesson_request.id).first
   end
 
   def sensei_accepted
@@ -28,11 +29,11 @@ class LessonRequestsController < ApplicationController
   end
 
   def index
-    # if
-    #   @lesson_requests = LessonRequest.where(user_id: current_user)
-    # else
-    #   @lesson_requests = LessonRequest.where(sensei_id: current_user.sensei)
-    # end
+    if params[:format] == "sensei"
+      @lesson_requests = LessonRequest.where(sensei_id: current_user.sensei)
+    else
+      @lesson_requests = LessonRequest.where(user_id: current_user)
+    end
   end
 
   def destroy

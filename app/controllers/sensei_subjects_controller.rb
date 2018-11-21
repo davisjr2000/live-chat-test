@@ -30,4 +30,13 @@ class SenseiSubjectsController < ApplicationController
     @sensei_subject.destroy
     redirect_to sensei_sensei_subjects_path(@sensei_subject.sensei)
   end
+
+  def price
+    # byebug
+    sensei = Sensei.find(params[:sensei_id])
+    price = sensei.sensei_subjects.where(subject_id: params[:subject]).first.price_per_hour
+    value = price * (params[:duration].to_f / 60)
+
+    render json: {value: value}
+  end
 end
